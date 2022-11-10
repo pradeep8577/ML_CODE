@@ -1,0 +1,36 @@
+import pandas as pd
+==========================
+df=pd.read_csv("C:\\Users\\VINOD\\Desktop\\NN\\weather_data.csv")
+df
+========================================
+df=pd.read_csv("C:\\Users\\VINOD\\Desktop\\NN\\weather_data.csv",parse_dates=["day"])
+df
+
+============================================
+df.set_index("day",inplace=True)
+df
+==========================================
+new_df=df.fillna(0)
+new_df
+=================================
+new_df=df.fillna({'temperature':0,'windspeed':0,'event':'no event'})
+new_df
+============================
+new_df=df.fillna(method="ffill")
+new_df
+========================
+new_df=df.fillna(method="bfill")
+new_df
+====================================
+new_df=df.fillna(method="ffill",limit=1)
+new_df
+================================
+new_df=df.interpolate()
+new_df
+======================================
+new_df=df.dropna()
+new_df
+========================
+new_df=df.dropna(how="all")
+new_df
+==================
